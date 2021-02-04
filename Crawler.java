@@ -15,12 +15,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springmodules.validation.commons.DefaultBeanValidator;
 
-import com.adms.common.log.service.AuthLogService;
-import com.adms.common.site.service.SiteCodeService;
-import com.adms.news.service.NewsService;
-import com.bsite.account.service.LoginService;
-import com.bsite.vo.NewsVO;
-import com.bsite.vo.sys_parcelVO;
 
 
 @Component
@@ -31,20 +25,7 @@ public class Crawler {
    
    private static final Logger logger = LoggerFactory.getLogger(Crawler.class);
 
-   @Resource(name = "LoginService")
-   private LoginService loginService;
-
-   @Resource(name = "AuthLogService")
-   private AuthLogService authLogService;
-
-   @Resource(name = "SiteCodeService")
-   private SiteCodeService siteCodeService;
-
    
-   @Resource (name = "NewsService")
-   protected NewsService newsService;
-   
-   private final String NAME_SPACE = "news.";
 
 //  @Scheduled (cron = "* * 0/5 * * *") // Dateformat N
 //  @Scheduled(fixedDelay = 10000)
