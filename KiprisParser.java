@@ -16,19 +16,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import com.adms.common.log.service.AuthLogService;
-import com.adms.common.site.service.SiteCodeService;
-import com.adms.patent.service.PatentService;
-import com.bsite.account.service.LoginService;
-import com.bsite.vo.PatentVO;
-import com.bsite.vo.Patent_designatedVO;
-import com.bsite.vo.Patent_familyVO;
-import com.bsite.vo.Patent_imageVO;
-import com.bsite.vo.Patent_ipcVO;
-import com.bsite.vo.Patent_legalVO;
-import com.bsite.vo.Patent_personVO;
-import com.bsite.vo.Patent_priordocumentVO;
-import com.bsite.vo.Patent_priorityVO;
 
 
 @Component
@@ -38,24 +25,8 @@ public class KiprisParser {
 	private DefaultBeanValidator beanValidator;
 	private static final Logger logger = LoggerFactory.getLogger(KiprisParser.class);
 	
-	@Resource(name = "LoginService")
-	private LoginService loginService;
+	
 
-	@Resource(name = "AuthLogService")
-	private AuthLogService authLogService;
-
-	@Resource(name = "SiteCodeService")
-	private SiteCodeService siteCodeService;
-
-	@Resource (name = "PatentService")
-	private PatentService patentService;
-	
-	
-	
-//	private final static String Servicekey = "A/u7iG0SdXDncO68VJNUBO3UUGN2MJ6S3NuEoAPQahc=";
-	private final static String Servicekey = "Uwsq9QuL9unbs/kiXVJb3RvPs6cB49=LKMhIIt4e8uU=";
-	private final String NAME_SPACE = "patent.";
-	
 	public void parser(String keyword, @ModelAttribute("searchVO") PatentVO searchVO) throws Exception {
 		
 		// 해외특허
